@@ -26,7 +26,7 @@ cak = os.environ.get('COINMARKETCAP_API_KEY')
 # caching API for 10min
 # Note the api limits: https://pro.coinmarketcap.com/features
 cache_ttl = os.environ.get('CACHE_TTL', 3000)
-cache = TTLCache(maxsize=10000, ttl=cache_ttl)
+cache = TTLCache(maxsize=10000, ttl=int(cache_ttl))
 
 class CoinClient():
   def __init__(self):
