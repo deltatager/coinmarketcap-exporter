@@ -31,9 +31,9 @@ cache = TTLCache(maxsize=10000, ttl=cache_ttl)
 class CoinClient():
   def __init__(self):
 
-    self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+    self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     self.headers = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY': cak}
-    self.parameters = {'start': '1', 'limit': '5000', 'convert': 'USD'}
+    self.parameters = {'id': 1, 'convert': 'USD'}
 
   @cached(cache)
   def tickers(self):
