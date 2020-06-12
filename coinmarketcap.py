@@ -33,7 +33,7 @@ class CoinClient():
 
     self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     self.headers = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY': cak}
-    self.parameters = {'id': 1, 'convert': 'USD'}
+    self.parameters = {'symbol': 'BTC', 'convert': 'USD'}
 
   @cached(cache)
   def tickers(self):
@@ -59,7 +59,7 @@ class CoinCollector():
       if 'data' not in response:
         log.error('No data in response. Is your API key set?')
       else:
-        for value in response['data']:
+          value = response['data']['BTC']
           for that in ['cmc_rank', 'total_supply', 'max_supply', 'circulating_supply']:
             coinmarketmetric = '_'.join(['coin_market', that])
             if value[that] is not None:
