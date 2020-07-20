@@ -60,7 +60,7 @@ class CoinCollector():
       if 'data' not in response:
         log.error('No data in response. Is your API key set?')
       else:
-          for value in response['data']
+          for value in response['data']:
           for that in ['cmc_rank', 'total_supply', 'max_supply', 'circulating_supply']:
             coinmarketmetric = '_'.join(['coin_market', that])
             if value[that] is not None:
