@@ -32,7 +32,7 @@ cache = TTLCache(maxsize=10000, ttl=int(cache_ttl))
 class CoinClient():
   def __init__(self):
 
-    self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listing/latest'
+    self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
     self.headers = {'Accepts': 'application/json', 'X-CMC_PRO_API_KEY': cak}
     self.parameters = {'symbol': smb, 'convert': 'USD'}
 
